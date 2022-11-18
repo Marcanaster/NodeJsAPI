@@ -27,6 +27,10 @@ const put = router.put("/:id", (req, res, next) => {
     item: req.body});
 });
 
+const del = router.delete("/:id", (req, res, next) => {
+  res.status(201).send(req.body);
+});
+
 app.use("/", route);
 app.use("/products", route);
 
