@@ -20,6 +20,13 @@ const create = router.post("/", (req, res, next) => {
   res.status(201).send(req.body);
 });
 
+const put = router.put("/:id", (req, res, next) => {
+  let id = req.params.id;
+  res.status(201).send({
+    id: id,
+    item: req.body});
+});
+
 app.use("/", route);
 app.use("/products", route);
 
