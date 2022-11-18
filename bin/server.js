@@ -9,7 +9,7 @@ app.set("port", port);
 const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
-// server.on('listening', onListening);
+server.on('listening', onListening);
 console.log(`API rodando na porta ${port}`);
 
 function normalizePort(val) {
@@ -28,7 +28,7 @@ function onError(error) {
 
   switch (error.code) {
     case "EACCES":
-      console.error(`${bind} require elevated privilieges`);
+      console.error(`${bind} require elevated privileges`);
       process.exit(1);
       break;
     case "EADDRINUSE":
@@ -38,4 +38,11 @@ function onError(error) {
     default:
       throw error;
   }
+}
+
+function onListening(){
+  const addr = server.address();
+  const bind = typeof addr == 'string'? `pipe ${addr}`: `port ${addr.port}`;
+  
+  debug(`Listening on ${bind}`)
 }
