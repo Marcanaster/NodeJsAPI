@@ -45,13 +45,6 @@ exports.getByTag = async (req, res, next) => {
 };
 
 exports.post = async (req, res, next) => {
-  //  let contract = new ValidationContract();
-  //  contract.hasMinLen(req.body.title, 3, 'O Título deve conter pelo menos 3 caracteres');
-
-  //  if(!contract.isValid()){
-  //   res.status(400).send(contract.errors()).end();
-  //  }
-
   try {
     await repository.create(req.body).then((x) => {
       res
