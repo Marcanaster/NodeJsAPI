@@ -1,7 +1,7 @@
 "use stricts";
 
 const mongoose = require("mongoose");
-const Schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
 const schema = new Schema({
   title: {
@@ -11,18 +11,18 @@ const schema = new Schema({
   },
   slug: {
     type: String,
-    required: true,
+    required: [true, 'É obrigatório informar o slug do produto'],
     trim: true,
     index: true,
     unique: true,
   },
   description: {
     type: String,
-    required: true
+    required: [true, 'É obrigatório informar descrição do produto']
   },
   price: {
     type: Number,
-    required: true
+    required: [true, 'É obrigatório informar o preço do produto']
   },
   active:{
     type: Boolean,
@@ -37,4 +37,4 @@ const schema = new Schema({
   ]
 });
 
-module.exports = mongoose.model("Product", schema);
+module.export = mongoose.model("Product", schema);
