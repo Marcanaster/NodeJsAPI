@@ -20,7 +20,7 @@ const schema = new Schema({
   status: {
     type: String,
     required: true,
-    enum: ["created, done"],
+    enum: ["created", "done"],
     default: "created",
   },
   items: [
@@ -39,11 +39,7 @@ const schema = new Schema({
         ref: "Product",
       },
     },
-  ],
-  active: {
-    type: String,
-    required: true,
-  },
+  ]
 });
 
 module.export = mongoose.model("Order", schema);

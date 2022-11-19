@@ -4,7 +4,7 @@ const { default: mongoose } = require("mongoose");
 const Customer = mongoose.model("Customer");
 
 exports.get = async () => {
-  const res = Customer.find({ active: true });
+  const res = await Customer.find({ active: true });
   return res;
 };
 

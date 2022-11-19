@@ -44,11 +44,8 @@ exports.getByTag = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
   try {
-    await repository.create(req.body).then((x) => {
-      res
-        .status(201)
-        .send({ message: "O produto foi cadastrado com sucesso!" });
-    });
+    await repository.create(req.body);
+    res.status(201).send({ message: "O produto foi cadastrado com sucesso!" });
   } catch (error) {
     res.status(500).send({ message: "Falha ao processar a requisição" });
   }
@@ -56,11 +53,8 @@ exports.post = async (req, res, next) => {
 
 exports.put = async (req, res, next) => {
   try {
-    await repository.update(req.params.id, req.body).then((data) => {
-      res.status(200).send({
-        message: "O produto foi alterado com sucesso !",
-      });
-    });
+    await repository.update(req.params.id, req.body);
+    res.status(200).send({ message: "O produto foi alterado com sucesso !" });
   } catch (error) {
     res.status(500).send({ message: "Falha ao processar a requisição" });
   }
@@ -69,9 +63,7 @@ exports.put = async (req, res, next) => {
 exports.delete = async (req, res, next) => {
   try {
     await repository.delete(req.params.id);
-    res.status(200).send({
-      message: "O produto foi removido com sucesso !",
-    });
+    res.status(200).send({ message: "O produto foi removido com sucesso !" });
   } catch (error) {
     res.status(500).send({ message: "Falha ao processar a requisição" });
   }
