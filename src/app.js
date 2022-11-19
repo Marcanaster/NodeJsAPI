@@ -15,6 +15,7 @@ const Order = require('./models/order-model');
 
 const indexRoute = require('./routes/index');
 const productRoute = require('./routes/products-route');
+const customerRoute = require('./routes/customer-router');
 
 
 app.use(bodyParser.json());
@@ -22,5 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use("/", indexRoute);
 app.use("/products", productRoute);
+app.use("/customers", customerRoute);
+
 
 module.exports = app;

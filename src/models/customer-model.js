@@ -10,9 +10,11 @@ const schema = new Schema({
   },
   email: {
     type: String,
-    required: true,
-    index: true,
-    unique: true
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
   },
   active:{
     type: String,
