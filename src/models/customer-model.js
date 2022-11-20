@@ -19,7 +19,12 @@ const schema = new Schema({
   active:{
     type: String,
     required: true
-  }
+  },
+  roles:[{
+    type: String,
+    required: true,enum:['user', 'admin'],
+    default: 'user'
+  }]
 });
 
 module.export = mongoose.model("Customer", schema);
