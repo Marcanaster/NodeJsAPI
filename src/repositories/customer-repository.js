@@ -3,14 +3,15 @@
 const { default: mongoose } = require("mongoose");
 const Customer = mongoose.model("Customer");
 
-exports.get = async () => {
-  const res = await Customer.find({ active: true });
+exports.authenticate = async (data) => {
+  const res = await Customer.findOne({
+    email: data.email,
+    password: data.password,
+  });
   return res;
 };
 
-exports.create = async(data) => {
+exports.create = async (data) => {
   var customer = new Customer(data);
   await customer.save();
 };
-
-
