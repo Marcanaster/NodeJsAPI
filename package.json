@@ -1,6 +1,6 @@
 {
   "name": "baltaapi",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Treinamento em nodeJs (COnstruindo uma API rest)",
   "main": "index.js",
   "scripts": {
