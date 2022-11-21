@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'nodestr-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6061DF8E8C554E19BC9F59FE88BB4DFD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9A09DE76239946E68078FC71C5233E8B }}
           package: .
